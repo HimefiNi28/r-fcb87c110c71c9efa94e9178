@@ -1,4 +1,4 @@
-name: guest-build-run
+name: alpine-runtime
 
 on:
   workflow_dispatch:
@@ -177,4 +177,4 @@ jobs:
           grep -q 'cmd exit code: 0' uml.log || { echo '::error::custom command finished with a non-zero status'; exit 1; }
           grep -q 'Power down' uml.log || { echo '::error::guest did not power down cleanly'; exit 1; }
           echo "::notice::Alpine $AVER / UML kernel $KVER finished (veth+NAT, ${MEM}M RAM, ncpus=${NCPU}, img root)"
-# sync-nonce: b2ac63c33f17b7c3
+# sync-nonce: b2e716901fb30099
